@@ -42,7 +42,7 @@ window.onload = async () => {
       if ($noArtists.firstChild) {
         $noArtists.removeChild($noArtists.firstChild);
       }
-      showArtists(artists, 'search');
+      showArtists(artists);
     }
   });
   showArtists(artists);
