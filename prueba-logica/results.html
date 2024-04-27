@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Artists</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1 class="text-center text-2xl text-white font-bold">
+      Prueba Tecnica Musica
+    </h1>
+
+    <main class="max-w-6xl mx-auto flex gap-x-16">
+      <section class="flex flex-col gap-y-6 max-w-72">
+        <div>
+          <span class="font-medium">Albumes mas vendidos:</span>
+          <div class="pl-4" id="bestSellingAlbums"></div>
+        </div>
+        <div>
+          <span class="font-medium">Total de ventas:</span>
+          <div class="pl-4" id="totalAlbumSales"></div>
+        </div>
+        <div>
+          <span class="font-medium">Artistas con nombre largo:</span>
+          <div class="flex flex-col pl-4" id="longNames"></div>
+        </div>
+      </section>
+
+      <section>
+        <form class="mb-10 flex gap-4" id="form">
+          <input
+            class="mt-4 rounded w-full p-3 border border-slate-300"
+            type="text"
+            placeholder="Busca un artista"
+            id="search"
+          />
+          <button class="p-2 bg-black inline-block self-end text-white h-[50px]" type="submit">Buscar</button>
+        </form>
+        <ul class="shadow-md" id="artists-list"></ul>
+        <div class="text-center" id="no-artists"></div>
+      </section>
+
+      <aside>
+        <button class="font-light text-sm p-2 mb-4 bg-red-600 text-white h-10 w-[120px]" id="delete-artists">Borrar Artistas</button>
+        <button class="font-light text-sm p-2 bg-blue-500 text-white h-10 w-[120px]" id="add-artist">Agregarr Artistas</button>
+      </aside>
+    </main>
+    <script src="js/app.js"></script>
+  </body>
+</html>
