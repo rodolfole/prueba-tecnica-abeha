@@ -51,7 +51,7 @@ window.onload = async () => {
 const addArtist = async () => {
   const artist = { artist: "Radiohead", name: "Ok Computer", sales: 5000000 };
 
-  artists.push(artist);
+  artists.push({...artist});
 
   showArtists(artists);
 };
@@ -75,7 +75,7 @@ const getArtists = async () => {
 };
 
 const searchArtists = async (search) => {
-  const artists = await getArtists();
+
   const results = artists.filter((music) =>
     music.artist.toLowerCase().includes(search)
   );
@@ -102,7 +102,7 @@ const renderArtistItem = (artist) => {
 
 const renderSearchArtistItem = (artist) => {
   return `
-  “El álbum ${artist.name} del artista ${artist.artist} vendió aproximadamente ${artist.sales} copias.”
+  <p>“El álbum ${artist.name} del artista ${artist.artist} vendió aproximadamente ${artist.sales} copias.”</p>
   `;
 };
 
@@ -144,6 +144,7 @@ const showArtists = (artists, type = "artists") => {
       type === "artists"
         ? renderArtistItem(artist)
         : renderSearchArtistItem(artist);
+        type === "artists" ? $artistsList.classList.remove('_flex') : $artistsList.classList.add('_flex')
     $artistsList.appendChild(item);
   });
 };

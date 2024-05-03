@@ -22,3 +22,8 @@ main, section {
     gap: 28px;
     width: 100%;
 }
+
+._flex {
+    display: flex !important;
+    flex-direction: column;
+}
